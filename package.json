@@ -10,7 +10,8 @@
   "author": "The-Vector",
   "license": "ISC",
   "dependencies": {
-    "ytdl-core": "^1.0.3"
+    "ytdl-core": "^1.0.3",
+    "discord.js": "^11.5.1"
   },
   "devDependencies": {},
   "repository": {
