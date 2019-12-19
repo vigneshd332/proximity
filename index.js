@@ -1,8 +1,4 @@
 const Discord = require('discord.js');
-const {
-	prefix,
-	token,
-} = require('./config.json');
 const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
@@ -23,32 +19,32 @@ client.once('disconnect', () => {
 
 client.on('message', async message => {
 	if (message.author.bot) return;
-	if (!message.content.startsWith(prefix)) return;
+	if (!message.content.startsWith(process.env.prefix)) return;
 
 	const serverQueue = queue.get(message.guild.id);
 
-	if (message.content.startsWith(`${prefix}play`)) {
+	if (message.content.startsWith(`${process.env.prefix}play`)) {
 		execute(message, serverQueue);
 		return;
-	} else if (message.content.startsWith(`${prefix}skip`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}skip`)) {
 		skip(message, serverQueue);
 		return;
-	} else if (message.content.startsWith(`${prefix}stop`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
-	} else if (message.content.startsWith(`${prefix}blyat`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}blyat`)) {
 		message.channel.send('сука блять!')
-	} else if (message.content.startsWith(`${prefix}babushka`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}babushka`)) {
 		message.channel.send('Yeah, she is drunk or smoking weed right now.')
-	} else if (message.content.startsWith(`${prefix}nettle`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}nettle`)) {
 		message.channel.send('The Italian? Sta ballando con la musica tarantella.')
-	} else if (message.content.startsWith(`${prefix}vk`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}vk`)) {
 		message.channel.send('Ah! The great Vk, he is doing his job, saving the world.')
-	} else if (message.content.startsWith(`${prefix}tarantella`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}tarantella`)) {
 		message.channel.send('!play https://www.youtube.com/watch?v=QNwC8eZ7brE')
-	} else if (message.content.startsWith(`${prefix}pizza`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
-	} else if (message.content.startsWith(`${prefix}sarosh`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	}else {
 		message.channel.send('I dont know what you are talking about! ')
@@ -135,4 +131,4 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
 
-client.login(token);
+client.login(process.env.token);
