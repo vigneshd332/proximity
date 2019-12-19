@@ -1,0 +1,25 @@
+{
+  "name": "bot-beatz",
+  "version": "1.0.0",
+  "description": "music bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "!test",
+    "start": "node index.js"
+  },
+  "author": "The-Vector",
+  "license": "ISC",
+  "dependencies": {
+    "ytdl-core": "^1.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigneshd332/bot-discord-random.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vigneshd332/bot-discord-random/issues"
+  },
+  "homepage": "https://github.com/vigneshd332/bot-discord-random#readme",
+  "keywords": []
+}
