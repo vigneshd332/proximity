@@ -1,3 +1,5 @@
+const cheerio = require("cheerio");
+const request = require("request");
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 
@@ -44,7 +46,9 @@ client.on('message', async message => {
 		message.channel.send('!play https://www.youtube.com/watch?v=QNwC8eZ7brE')
 	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
-	} else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
+	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
+		image(message, args);
+    } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	}else {
 		message.channel.send('I dont know what you are talking about! ')
@@ -130,5 +134,44 @@ function play(guild, song) {
 		});
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
+function image(message, args) {
 
+	/* extract search query from message */
+
+	var search = args.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
+
+	var options = {
+	    url: "http://results.dogpile.com/serp?qc=images&q=" + search,
+	    method: "GET",
+	    headers: {
+	        "Accept": "text/html",
+	        "User-Agent": "Chrome"
+	    }
+	};
+	request(options, function(error, response, responseBody) {
+		if (error) {
+			// handle error
+			return;
+		}
+
+		/* Extract image URLs from responseBody using cheerio */
+
+		$ = cheerio.load(responseBody); // load responseBody into cheerio (jQuery)
+
+		// In this search engine they use ".image a.link" as their css selector for image links
+		var links = $(".image a.link");
+
+		// We want to fetch the URLs not the DOM nodes, we do this with jQuery's .attr() function
+		// this line might be hard to understand but it goes thru all the links (DOM) and stores each url in an array called urls
+		var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+		console.log(urls);
+		if (!urls.length) {
+			// Handle no results
+			return;
+		}
+
+		// Send result
+		message.channel.send( urls[0] );
+	});
+}
 client.login(process.env.token);
