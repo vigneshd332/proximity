@@ -18,7 +18,19 @@ client.once('reconnecting', () => {
 client.once('disconnect', () => {
 	console.log('Disconnect!');
 });
-
+client.on("message", function(message) {
+ 
+    var parts = message.content.split(" "); // Splits message into an array for every space, our layout: "<command> [search query]" will become ["<command>", "search query"]
+ 
+    /* Simple command manager */
+    if (parts[0] === "!image") { // Check if first part of message is image command
+ 
+        // call the image function
+        image(message, parts); // Pass requester message to image function
+ 
+    }
+ 
+});
 client.on('message', async message => {
 	if (message.author.bot) return;
 	if (!message.content.startsWith(process.env.prefix)) return;
@@ -46,9 +58,9 @@ client.on('message', async message => {
 		message.channel.send('!play https://www.youtube.com/watch?v=QNwC8eZ7brE')
 	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
-	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
+	} /*else if (message.content.startsWith(`${process.env.prefix}image`)) {
 		image(message, args);
-    } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
+    }*/ else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	}else {
 		message.channel.send('I dont know what you are talking about! ')
@@ -134,11 +146,13 @@ function play(guild, song) {
 		});
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
-function image(message, args) {
+function image(message, parts) {
+	const args = message.content.split(' ');
+
 
 	/* extract search query from message */
 
-	var search = args.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
+	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
 
 	var options = {
 	    url: "http://results.dogpile.com/serp?qc=images&q=" + search,
