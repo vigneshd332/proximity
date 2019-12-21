@@ -23,7 +23,7 @@ client.on("message", function(message) {
     var parts = message.content.split(" "); // Splits message into an array for every space, our layout: "<command> [search query]" will become ["<command>", "search query"]
  
     /* Simple command manager */
-    if (parts[0] === "!image") { // Check if first part of message is image command
+    if (message.content.startsWith(`${process.env.prefix}image`)) { // Check if first part of message is image command
  
         // call the image function
         image(message, parts); // Pass requester message to image function
