@@ -5,3 +5,8 @@ Right now, the bot can:
 * Play Songs
 * Search Images
 * Recognize & Classify Images
+
+Environment variables (Config Vars) to configure in Heroku:
+* prefix = command prefix for bot (usually it is !)
+* token = Your unique Discord API Token
+* watson_key = Your unique IBM Watson API key from IBM Cloud
