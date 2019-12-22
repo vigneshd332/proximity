@@ -14,7 +14,9 @@
     "discord.js": "^11.5.1",
     "node-opus": "^0.3.3",
     "cheerio": "^1.0.0-rc.3",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "watson-developer-cloud": "^3.8.0",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {},
   "repository": {
