@@ -1,7 +1,7 @@
 {
-  "name": "bot-beatz",
-  "version": "1.0.0",
-  "description": "music bot",
+  "name": "bot-blyatman",
+  "version": "2.0.0",
+  "description": "more than a music bot",
   "main": "index.js",
   "scripts": {
     "test": "!test",
