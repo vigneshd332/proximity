@@ -87,9 +87,11 @@ client.on('message', async message => {
 		message.channel.send('!play https://www.youtube.com/watch?v=QNwC8eZ7brE')
 	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
+	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
+		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
 	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
 		return;
-    } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
+        } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	}else {
 		message.channel.send('I dont know what you are talking about! ')
