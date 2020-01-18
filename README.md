@@ -4,7 +4,7 @@ Just a thing I've been working on, a bot for Discord. I'm currently hosting my b
 Right now, the bot can:
 * Play Songs
 * Search Images
-* Recognize & Classify Images
+* Recognize & Classify Images (requires an IBM Cloud account to use IBM Watson)
 
 Environment variables (Config Vars) to configure in Heroku:
 * prefix = command prefix for bot (usually it is !)
