@@ -14,7 +14,10 @@ Environment variables (Config Vars) to configure in Heroku:
 To deploy a version of this bot to your Heroku account:
 * Download a release package from the Releases Tab, (preferably the latest one)
 * Unzip the contents to a folder
-* Push the files to your Heroku git (information on this can be found on the Heroku site on the deploy tab in your account)
+* Create an application for your bot in Heroku.
 * Create the environment variables with names exactly as mentioned.
-* Create a worker dyno "node index.js" and start it. The "web npm start" dyno switches off randomly so its better to keep it off.
+* Add the official nodejs and this buildpack: https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
+  to "Buildpacks" in your bot's settings in Heroku.
+* Push the files to your Heroku git (information on this can be found on the Heroku site on the deploy tab in your account).
+* Create a worker dyno "node index.js" (if not present under dynos, already) and start it. The "web npm start" dyno switches off randomly     so its better to keep it off.
 * Pro Tip: Keep an eye on the application logs in Heroku to find out any problems.
