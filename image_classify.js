@@ -2,7 +2,7 @@ const watson = require('watson-developer-cloud');
 
 //object containing credentials such as api key and tokens
 const credential = {
-    url: 'https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/b79e80d4-d653-4713-8abf-c629b018cba5',
+    url: process.env.watson_url,
     version: '2018-03-19',
     iam_apikey: process.env.watson_key
 }
