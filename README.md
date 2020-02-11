@@ -37,7 +37,7 @@ It's better to do it in order.
 * Create the environment variables with names exactly as mentioned.
 * Add the official nodejs buildpack and this buildpack: https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
   to "Buildpacks" in your bot's settings.
-* Link **your** forked GutHub repo (not this one) to the application in the Deploy tab and enable Automatic deploys.
+* Link **your** forked GitHub repo (not this one) to the application in the Deploy tab and enable Automatic deploys.
 * You must see your bot should be building in the application logs or in the overview. If not, then manually deploy it.
 * Create a worker dyno "node index.js" (if not present under dynos, already) and start it. The "web npm start" dyno switches off randomly so its better to keep it off.
 ### Pro Tips:
