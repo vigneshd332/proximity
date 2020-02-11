@@ -8,9 +8,10 @@ Right now, the bot can:
 * Recognize & Classify Images (requires an IBM Cloud account to use IBM Watson)
 
 #### Environment variables (Config Vars) to configure in Heroku:
-* prefix = the command prefix for bot (usually it is !) [Example: ! or ~]
+* prefix = the command prefix for bot (usually it is !) [Example: ! or ~].
 * token = Your unique Discord API Token from the bot's account.
-* watson_key = Your unique IBM Watson API key from IBM Cloud
+* watson_key = Your unique IBM API key from IBM Cloud.
+* watson_url = The Url in IBM Cloud with the Api Key.
 
 ## To deploy a version of this bot to your Heroku account:
 
@@ -30,7 +31,7 @@ It's better to do it in order.
 ### Stuff to do in IBM Cloud:
 * Create an account
 * Create a Visual Recognition resource (the Lite free plan is enough).
-* Find the The Api Key in the resource details and keep a copy of it (again, privately),
+* Find the The Api Key and Url in the resource details and keep a copy of it (again, privately),
 
 ### Stuff to do in Heroku:
 * Create a Heroku Account and an application for the bot.
