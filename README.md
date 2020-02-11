@@ -7,7 +7,7 @@ Right now, the bot can:
 * Recognize & Classify Images (requires an IBM Cloud account to use IBM Watson)
 
 Environment variables (Config Vars) to configure in Heroku:
-* prefix = the command prefix for bot to (usually it is !) [Example: !command ~command]
+* prefix = the command prefix for bot to (usually it is !) [Example: ! or ~]
 * token = Your unique Discord API Token from the bot's account.
 * watson_key = Your unique IBM Watson API key from IBM Cloud
 
