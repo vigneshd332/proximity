@@ -13,6 +13,14 @@ Right now, the bot can:
 * watson_key = Your unique IBM API key from IBM Cloud.
 * watson_url = The Url in IBM Cloud with the Api Key.
 
+#### Commands:
+* \<prefix>play \<url> : Plays mp3 from video in url.
+* \<prefix>stop : Stops playback.
+* \<prefix>skip : Skips to next song in queue.
+* \<prefix>image \<search term> : Displays images related to the search term.
+* \<prefix>bruh : Displays a bruh gif.
+* The bot automatically analyzes all uploaded images to classify them.
+
 ## To deploy a version of this bot to your Heroku account:
 
 It's better to do it in order.
