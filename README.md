@@ -23,7 +23,7 @@ It's better to do it in order.
 * Do all the authorization stuff.
 * Keep a copy of your bot's token (privately).
 
-### Stuff to do In Github:
+### Stuff to do in Github:
 * Get a Github Account. (Pls don't ask me how to do that)
 * Fork this Repo.
 
