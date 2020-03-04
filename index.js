@@ -8,9 +8,9 @@ const print = require('./print');
 const { Client, Collection, Structures } = require('discord.js');
 const fs = require('fs-extra');
 const path = require('path');
-const appEvents = require('./events/appEvents');
-const appHandlers = require('./events/handlers/app');
-const { TTSGuild } = require('./classes/extensions');
+const appEvents = require('./src/events/appEvents');
+const appHandlers = require('./src/events/handlers/app');
+const { TTSGuild } = require('./src/classes/extensions');
 
 Structures.extend('Guild', TTSGuild);
 
