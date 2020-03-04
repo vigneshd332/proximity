@@ -14,7 +14,7 @@ Right now, the bot can:
 * watson_url = The Url in IBM Cloud with the Api Key.
 
 #### Commands:
-* \<prefix>play \<url> : Plays mp3 from video in url.
+* \<prefix>play \<url> : Plays audio from video in url.
 * \<prefix>stop : Stops playback.
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
