@@ -4,7 +4,7 @@ const { Logger } = require('logger');
 const dispatcherEvents = require('../events/dispatcherEvents');
 const languages = require('../../data/languages.json');
 const { TTS_ENGINES, AEIOU_API_URL } = require('../common/constants');
-const prefix = process.env.PREFIX || require('../../config/settings.json').prefix;
+const prefix = process.env.prefix;
 
 const logger = new Logger();
 
