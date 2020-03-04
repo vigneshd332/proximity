@@ -5,9 +5,9 @@ const TTS_MAX_CHARS = 200;
 const MESSAGE_EMBED = {
   color: '#20B2AA',
   langThumbnail: 'https://i.imgur.com/QbNXO4q.jpg',
-  langURL: 'https://github.com/moonstar-x/discord-tts-bot#language-support',
+  langURL: 'https://github.com/vigneshd332/bot-discord-random#language-support',
   helpThumbnail: 'https://i.imgur.com/Tqnk48j.png',
-  helpURL: 'https://github.com/moonstar-x/discord-tts-bot/issues'
+  helpURL: 'https://github.com/vigneshd332/bot-discord-random/issues'
 };
 
 const PERMISSIONS = {
