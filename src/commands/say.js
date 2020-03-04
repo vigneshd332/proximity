@@ -1,6 +1,6 @@
 const { Logger } = require('logger');
 const { splitToPlayable } = require('../common/utils');
-const allowOver200 = process.env.ALLOW_OVER_200 || require('../../config/settings.json').allow_more_than_200_chars;
+const allowOver200 = process.env.allow_over_200;
 
 const logger = new Logger();
 
