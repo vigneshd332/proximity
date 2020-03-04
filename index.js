@@ -1,3 +1,4 @@
+const { Client, Collection, Structures } = require('discord.js');
 const cheerio = require("cheerio");
 const request = require("request");
 const Discord = require('discord.js');
@@ -5,7 +6,6 @@ const ytdl = require('ytdl-core');
 const watson = require('watson-developer-cloud');
 const image_classify = require('./image_classify');
 const print = require('./print');
-const { Client, Collection, Structures } = require('discord.js');
 const fs = require('fs-extra');
 const path = require('path');
 const appEvents = require('./src/events/appEvents');
