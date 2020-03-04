@@ -1,5 +1,5 @@
 const { Logger } = require('logger');
-const { ACTIVITY_TYPE, TTS_MAX_CHARS } = require('./constants');
+const { ACTIVITY_TYPE, TTS_MAX_CHARS } = require('./src/constants');
 const allowOver200 = process.env.allow_over_200;
 
 const logger = new Logger();
