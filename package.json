@@ -16,7 +16,11 @@
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.0",
     "watson-developer-cloud": "^3.8.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "axios": "^0.19.0",
+    "fs-extra": "^8.1.0",
+    "google-tts-api": "0.0.4",
+    "logger": "github:moonstar-x/logger",
   },
   "devDependencies": {},
   "repository": {
