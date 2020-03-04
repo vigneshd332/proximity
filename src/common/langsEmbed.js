@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { MESSAGE_EMBED } = require('./constants');
+const { MESSAGE_EMBED } = require('./src/constants');
 const prefix = process.env.prefix;
 
 const embed = new MessageEmbed()
