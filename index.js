@@ -3,14 +3,43 @@ const request = require("request");
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const watson = require('watson-developer-cloud');
-var fs = require('fs');
 const image_classify = require('./image_classify');
 const print = require('./print');
+const { Client, Collection, Structures } = require('discord.js');
+const fs = require('fs-extra');
+const path = require('path');
+const appEvents = require('./events/appEvents');
+const appHandlers = require('./events/handlers/app');
+const { TTSGuild } = require('./classes/extensions');
 
+Structures.extend('Guild', TTSGuild);
 
 const client = new Discord.Client();
 
 const queue = new Map();
+
+client.commands = new Collection();
+const commandFiles = fs.readdirSync(path.join(__dirname, '/commands')).filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+  const command = require(path.join(__dirname, './commands', file));
+  client.commands.set(command.name, command);
+}
+
+client.on(appEvents.error, (error) => appHandlers.handleError(error));
+client.on(appEvents.guildCreate, (guild) => appHandlers.handleGuildCreate(guild, client));
+client.on(appEvents.guildDelete, (guild) => appHandlers.handleGuildDelete(guild, client));
+client.on(appEvents.guildUnavailable, (guild) => appHandlers.handleGuildUnavailable(guild));
+client.on(appEvents.invalidated, appHandlers.handleInvalidated);
+client.on(appEvents.message, (message) => appHandlers.handleMessage(message, client));
+client.on(appEvents.ready, () => appHandlers.handleReady(client));
+client.on(appEvents.warn, (info) => appHandlers.handleReady(info));
+
+
+if (process.argv[2] === '--debug') {
+
+  client.on(appEvents.debug, (info) => appHandlers.debug(info));
+
+}
 
 client.once('ready', () => {
 	console.log('Ready!');
