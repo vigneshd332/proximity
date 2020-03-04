@@ -19,9 +19,9 @@ const client = new Discord.Client();
 const queue = new Map();
 
 client.commands = new Collection();
-const commandFiles = fs.readdirSync(path.join(__dirname, '/commands')).filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(path.join(__dirname, '/src/commands')).filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
-  const command = require(path.join(__dirname, './commands', file));
+  const command = require(path.join(__dirname, './src/commands', file));
   client.commands.set(command.name, command);
 }
 
