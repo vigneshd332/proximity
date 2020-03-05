@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "ytdl-core": "^1.0.3",
-    "discord.js": "^11.5.1",
-    "node-opus": "^0.3.3",
+    "discord.js": "github:discordjs/discord.js",
+    "node-opus": "^0.3.2",
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.0",
     "watson-developer-cloud": "^3.8.0",
