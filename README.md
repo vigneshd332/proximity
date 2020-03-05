@@ -38,7 +38,7 @@ It's better to do it in order.
 * Find the The Api Key and Url in the resource details and keep a copy of it (again, privately),
 
 ### Stuff to do in Heroku:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/moonstar-x/discord-tts-bot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vigneshd332/bot-discord-random)
 * Hit the button above and login,
 * You must see your bot should be building in the application logs or in the overview. If not, then manually deploy it.
 * Start the worker dyno "npm start" in the overview. The "web" dyno switches off randomly so its better to keep it off.
