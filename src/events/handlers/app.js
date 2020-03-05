@@ -54,9 +54,7 @@ const handleReady = (client) => {
   logger.info('Connected to Discord! - Ready.');
   updatePresence(client);
   
-  console.log(client.guilds);
-
-  client.guilds.forEach((guild) => {
+  client.guilds.each((guild) => {
     guild.ttsPlayer = new TTSPlayer(guild);
   });
 };
