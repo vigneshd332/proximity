@@ -2,8 +2,11 @@ const { Logger } = require('logger');
 const TTSPlayer = require('../../classes/TTSPlayer');
 const prefix = process.env.prefix;
 const { updatePresence, executeCommand } = require('../../common/utils');
+const Discord = require('discord.js');
 
-const logger = new Logger();
+const logger = new Logger(); 
+
+const client = new Discord.Client();
 
 const handleDebug = (info) => {
   logger.debug(info);
@@ -54,7 +57,7 @@ const handleReady = (client) => {
   logger.info('Connected to Discord! - Ready.');
   updatePresence(client);
   
-  client.guilds.map((guild) => {
+  client.guilds.forEach((guild) => {
     guild.ttsPlayer = new TTSPlayer(guild);
   });
 };
