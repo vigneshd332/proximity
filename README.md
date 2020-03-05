@@ -32,23 +32,16 @@ It's better to do it in order.
 * Do all the authorization stuff.
 * Keep a copy of your bot's token (privately).
 
-### Stuff to do in Github:
-* Get a Github Account. (Pls don't ask me how to do that)
-* Fork this Repo.
-
 ### Stuff to do in IBM Cloud:
 * Create an account
 * Create a Visual Recognition resource (the Lite free plan is enough).
 * Find the The Api Key and Url in the resource details and keep a copy of it (again, privately),
 
 ### Stuff to do in Heroku:
-* Create a Heroku Account and an application for the bot.
-* Create the environment variables with names exactly as mentioned.
-* Add the official nodejs buildpack and this buildpack: https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
-  to "Buildpacks" in your bot's settings.
-* Link **your** forked GitHub repo (not this one) to the application in the Deploy tab and enable Automatic deploys.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/moonstar-x/discord-tts-bot)
+* Hit the button above and login,
 * You must see your bot should be building in the application logs or in the overview. If not, then manually deploy it.
-* Create a worker dyno "node index.js" (if not present under dynos, already) and start it. The "web npm start" dyno switches off randomly so its better to keep it off.
+* Start the worker dyno "npm start" in the overview. The "web" dyno switches off randomly so its better to keep it off.
 ### Pro Tips:
 * Keep an eye on the application logs in Heroku to find out any problems.
 * Heroku gives only 450 free hours a month, simply adding credit card details will will give an extra 550 hours.
