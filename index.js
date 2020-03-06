@@ -219,4 +219,4 @@ function image(message, parts) {
 		message.channel.send( urls[0] );
 	});
 }
-client.login(process.env.token);
+client.login('Njg1NTk5ODk1OTk3OTA3MDY1.XmLSSg.3FsK6aRsIoBWxxwz5lPFYDJACJM');
