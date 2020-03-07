@@ -5,6 +5,7 @@ Just a thing I've been working on, a bot for Discord. I'm currently hosting my b
 Right now, the bot can:
 * Play Songs
 * Search Images
+* Convert Text to Speech
 * Recognize & Classify Images (requires an IBM Cloud account to use IBM Watson)
 
 #### Environment variables (Config Vars) to configure in Heroku:
@@ -19,6 +20,7 @@ Right now, the bot can:
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
+* \<prefix>tts : Converts text in any script to audio.
 * The bot automatically analyzes all uploaded images to classify them.
 
 ## To deploy a version of this bot to your Heroku account:
