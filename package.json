@@ -16,7 +16,8 @@
     "cheerio": "^1.0.0-rc.3",
     "request": "^2.88.0",
     "watson-developer-cloud": "^3.8.0",
-    "fs": "^0.0.1-security"
+    "download-file": "^0.1.5",
+    "google-tts-api": "0.0.4"
   },
   "devDependencies": {},
   "repository": {
