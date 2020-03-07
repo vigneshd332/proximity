@@ -64,6 +64,7 @@ client.on('message', message => {
     let act = lang[1];
     let toMp3 = message.content.split(" ");
     toMp3.shift();
+    toMp3.shift();
     toMp3 = toMp3.join(" ");
 
     let options = {
