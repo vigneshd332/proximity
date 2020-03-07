@@ -60,7 +60,7 @@ client.on('message', message => {
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
     awaiting.push(message.author.id);
-
+    let lang = message.content.split[1](" ");
     let toMp3 = message.content.split(" ");
     toMp3.shift();
     toMp3 = toMp3.join(" ");
@@ -70,7 +70,7 @@ client.on('message', message => {
       filename: `${message.author.id}.mp3`
     }
 
-    tts(toMp3, toMp3[1], 1)
+    tts(toMp3, lang, 1)
       .then(url => {
         download(url, options)
           .then(() =>
