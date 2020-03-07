@@ -22,7 +22,8 @@ Right now, the bot can:
 * \<prefix>bruh : Displays a bruh gif.
 * \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
 * The bot automatically analyzes all uploaded images to classify them.
-Language accents: en, it, jp, ru, etc.
+
+** Language accents: en, it, jp, ru, etc.**
 ## To deploy a version of this bot to your Heroku account:
 
 It's better to do it in order.
