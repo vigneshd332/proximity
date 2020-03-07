@@ -1,12 +1,21 @@
 const cheerio = require("cheerio");
 const request = require("request");
+const tts = require('google-tts-api');
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const watson = require('watson-developer-cloud');
-var fs = require('fs');
+const fs = require('fs').promises;
 const image_classify = require('./image_classify');
 const print = require('./print');
+const util = require('util');
+const download = util.promisify(require('download-file'));
 
+const usage = new Discord.RichEmbed()
+  .setTitle("Invalid Usage!")
+  .setColor(0xFF0000)
+  .setDescription(".ttmp3 <message less than or equal to 200 characters>");
+
+let awaiting = [];
 
 const client = new Discord.Client();
 
@@ -46,6 +55,52 @@ client.on('message' , msg =>{
 
     }
 });
+client.on('message', message => {
+  if (awaiting.includes(message.author.id)) return;
+
+  if (message.content.startsWith(`${process.env.prefix}ttmp3`)) {
+    awaiting.push(message.author.id);
+
+    let toMp3 = message.content.split(" ");
+    toMp3.shift();
+    toMp3 = toMp3.join(" ");
+
+    let options = {
+      directory: `././audio`,
+      filename: `${message.author.id}.mp3`
+    }
+
+    tts(toMp3, 'en', 1)
+      .then(url => {
+        download(url, options)
+          .then(() =>
+            message.channel.send({
+              files: [{
+                attachment: `${options.directory}/${options.filename}`,
+                name: `${message.author.id}.mp3`
+              }]
+            })
+          )
+          .then(msg => {
+            //fs.unlink(`${options.directory}/${options.filename}`)
+            removeAwaiting(message.author.id);
+          })
+          .catch(err => {
+            console.error(error);
+            removeAwaiting(message.author.id);
+          });
+      })
+      .catch(err => {
+        message.channel.send(usage);
+        removeAwaiting(message.author.id);
+      });
+  }
+});
+
+
+function removeAwaiting(id) {
+  awaiting = awaiting.filter(awaiter => awaiter != id);
+}
 client.on("message", function(message) {
  
     var parts = message.content.split(" "); // Splits message into an array for every space, our layout: "<command> [search query]" will become ["<command>", "search query"]
