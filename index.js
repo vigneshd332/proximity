@@ -146,9 +146,11 @@ client.on('message', async message => {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
 	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
 		return;
+        } else if (message.content.startsWith(`${process.env.prefix}tts`)) {
+		return;
         } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
-	}else {
+	} else {
 		message.channel.send('I dont know what you are talking about! ')
 	}
 });
