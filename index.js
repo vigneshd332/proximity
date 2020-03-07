@@ -70,7 +70,7 @@ client.on('message', message => {
       filename: `${message.author.id}.mp3`
     }
 
-    tts(toMp3, 'en', 1)
+    tts(toMp3, toMp3[1], 1)
       .then(url => {
         download(url, options)
           .then(() =>
