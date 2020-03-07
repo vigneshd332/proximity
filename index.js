@@ -58,7 +58,7 @@ client.on('message' , msg =>{
 client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
 
-  if (message.content.startsWith(`${process.env.prefix}ttmp3`)) {
+  if (message.content.startsWith(`${process.env.prefix}tts`)) {
     awaiting.push(message.author.id);
 
     let toMp3 = message.content.split(" ");
