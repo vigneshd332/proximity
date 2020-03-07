@@ -11,7 +11,7 @@ Right now, the bot can:
 * prefix = the command prefix for bot (usually it is !) [Example: ! or ~].
 * token = Your unique Discord API Token from the bot's account.
 * watson_key = Your unique IBM API key from IBM Cloud.
-* watson_url = The Url in IBM Cloud with the Api Key.
+* watson_url = The URL in IBM Cloud with the API Key.
 
 #### Commands:
 * \<prefix>play \<url> : Plays audio from video in url.
