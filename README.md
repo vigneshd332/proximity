@@ -20,9 +20,9 @@ Right now, the bot can:
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
-* \<prefix>tts : Converts text in any script to audio.
+* \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
 * The bot automatically analyzes all uploaded images to classify them.
-
+Language accents: en, it, jp, ru, etc.
 ## To deploy a version of this bot to your Heroku account:
 
 It's better to do it in order.
