@@ -155,6 +155,7 @@ client.on('message', async message => {
 		message.channel.send('I automatically analyze all uploaded images to recognize them. **Linked images are not recognized.** ')
 		message.channel.send('Contact Vish if I am not working borked.')
 		message.channel.send('(P.S Boot him if he does not respond)')
+		return;
 	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
 	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
