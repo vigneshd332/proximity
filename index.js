@@ -145,12 +145,12 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
 	} else if (message.content.startsWith(`${process.env.prefix}help`)) {
-	 	message.channel.send(`${process.env.prefix}play` + '<link> : Plays audio from video in link.')
+	 	message.channel.send(`${process.env.prefix}play` + ' <link> : Plays audio from video in link.')
                 message.channel.send(`${process.env.prefix}stop` + ': Stops playback.')
                 message.channel.send(`${process.env.prefix}skip` + ': Skips to next song in queue.')
-                message.channel.send(`${process.env.prefix}image` + '<search term> : Displays images related to the search term.')
+                message.channel.send(`${process.env.prefix}image` + ' <search term> : Displays images related to the search term.')
                 message.channel.send(`${process.env.prefix}bruh` + ': Displays a bruh gif.')
-                message.channel.send(`${process.env.prefix}tts` + '<language accent> <text>: Converts text in any script to audio.')
+                message.channel.send(`${process.env.prefix}tts` + ' <language accent> <text>: Converts text in any script to audio.')
                 message.channel.send('** Language accents: en, it, jp, ru, etc.**')
 		message.channel.send('I automatically analyze all uploaded images to recognize them. **Linked images are not recognized.** ')
 		message.channel.send('Contact Vish if I am not working borked.')
@@ -251,7 +251,7 @@ function play(guild, song) {
 function image(message, parts) {
 	const args = message.content.split(' ');
 
-
+        if(msg.author.bot) return;
 	/* extract search query from message */
 
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
