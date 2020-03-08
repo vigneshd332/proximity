@@ -145,15 +145,15 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}pizza`)) {
 	 	message.channel.send(':pizza: Me-a already had a lot-a pizza :pizza:')
 	} else if (message.content.startsWith(`${process.env.prefix}help`)) {
-	 	message.channel.send('<prefix>play <url> : Plays audio from video in url.')
-                message.channel.send('<prefix>stop : Stops playback.')
-                message.channel.send('<prefix>skip : Skips to next song in queue.')
-                message.channel.send('<prefix>image <search term> : Displays images related to the search term.')
-                message.channel.send('<prefix>bruh : Displays a bruh gif.')
-                message.channel.send('<prefix>tts <language accent> <text>: Converts text in any script to audio.')
-                message.channel.send('The bot automatically analyzes all uploaded images to classify them.')
+	 	message.channel.send(`${process.env.prefix}play` + '<link> : Plays audio from video in link.')
+                message.channel.send(`${process.env.prefix}stop` + ': Stops playback.')
+                message.channel.send(`${process.env.prefix}skip` + ': Skips to next song in queue.')
+                message.channel.send(`${process.env.prefix}image` + '<search term> : Displays images related to the search term.')
+                message.channel.send(`${process.env.prefix}bruh` + ': Displays a bruh gif.')
+                message.channel.send(`${process.env.prefix}tts` + '<language accent> <text>: Converts text in any script to audio.')
                 message.channel.send('** Language accents: en, it, jp, ru, etc.**')
-		message.channel.send('Contact Vish if I am borked.')
+		message.channel.send('I automatically analyze all uploaded images to recognize them. **Linked images are not recognized.** ')
+		message.channel.send('Contact Vish if I am not working borked.')
 		message.channel.send('(P.S Boot him if he does not respond)')
 	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
