@@ -153,8 +153,19 @@ client.on('message', async message => {
                 message.channel.send(`${process.env.prefix}tts` + ' <language accent> <text>: Converts text in any script to audio.')
                 message.channel.send('** Language accents: en, it, jp, ru, etc.**')
 		message.channel.send('I automatically analyze all uploaded images to recognize them. **Linked images are not recognized.** ')
-		message.channel.send('Contact Vish if I am not working borked.')
-		message.channel.send('(P.S Boot him if he does not respond)')
+		message.channel.send('Contact Vish if I am not working or borked.')
+		message.channel.send('(P.S Boot his a** if he does not respond)')
+		return;
+	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
+	 	message.channel.send('**Athena**')
+                message.channel.send('Version : v3.1.1')
+                message.channel.send('Build Date : 8/3/2020')
+                message.channel.send('Hosted on : Heroku (Stack 18)')
+                message.channel.send('Built using **FFMPEG** and **Node.js**')
+		message.channel.send('We <3 Open-Source!')
+		message.channel.send('Proudly hosted on GitHub. Licensed with GPL v3.0')
+                message.channel.send('Git : https://github.com/vigneshd332/bot-discord-random')
+		message.channel.send('Message from Vish : Relax, she is not gonna take over the world. Believe me. Its all under control.')
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
