@@ -251,7 +251,6 @@ function play(guild, song) {
 function image(message, parts) {
 	const args = message.content.split(' ');
 
-        if(msg.author.bot) return;
 	/* extract search query from message */
 
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
