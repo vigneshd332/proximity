@@ -166,6 +166,7 @@ client.on('message', async message => {
 		message.channel.send('Proudly hosted on **GitHub**. Licensed with **GPL v3.0**')
                 message.channel.send('**Git :** https://github.com/vigneshd332/bot-discord-random')
 		message.channel.send('**Message from Vish :** Relax, she is not gonna take over the world. Believe me. Its all under control.')
+		message.channel.send('https://tenor.com/view/under-control-its-under-control-thumbs-up-we-got-this-dont-worry-gif-14366687')
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
