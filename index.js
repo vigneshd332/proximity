@@ -148,7 +148,7 @@ client.on('message', async message => {
 	 	message.channel.send(`${process.env.prefix}play` + ' <link> : Plays audio from video in link.')
                 message.channel.send(`${process.env.prefix}stop` + ': Stops playback.')
                 message.channel.send(`${process.env.prefix}skip` + ': Skips to next song in queue.')
-                message.channel.send(`${process.env.prefix}image` + ' <search term> : Displays images related to the search term.')
+                message.channel.send(`${process.env.prefix} image` + ' <search term> : Displays images related to the search term.')
                 message.channel.send(`${process.env.prefix}bruh` + ': Displays a bruh gif.')
                 message.channel.send(`${process.env.prefix}tts` + ' <language accent> <text>: Converts text in any script to audio.')
                 message.channel.send('** Language accents: en, it, jp, ru, etc.**')
