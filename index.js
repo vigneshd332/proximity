@@ -23,6 +23,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setActivity("Taking over the World 101 | v3.1.1 'Pink Kestrel'").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -158,10 +159,10 @@ client.on('message', async message => {
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
 	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.1.1')
+                message.channel.send('**Version :** v3.1.1 "Pink Kestrel"')
                 message.channel.send('**Build Date :** 8/3/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
-                message.channel.send('Built using **FFMPEG** and **Node.js**')
+                message.channel.send('Built using **Node.js**')
 		message.channel.send('We <3 Open-Source!')
 		message.channel.send('Proudly hosted on **GitHub**. Licensed with **GPL v3.0**')
                 message.channel.send('**Git :** https://github.com/vigneshd332/bot-discord-random')
