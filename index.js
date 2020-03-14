@@ -9,6 +9,7 @@ const image_classify = require('./image_classify');
 const print = require('./print');
 const util = require('util');
 const download = util.promisify(require('download-file'));
+const logger = require("heroku-logger");
 
 const usage = new Discord.RichEmbed()
   .setTitle("Invalid Usage!")
