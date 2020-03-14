@@ -17,7 +17,8 @@
     "request": "^2.88.0",
     "watson-developer-cloud": "^3.8.0",
     "download-file": "^0.1.5",
-    "google-tts-api": "0.0.4"
+    "google-tts-api": "0.0.4",
+    "heroku-logger": "^0.3.3"
   },
   "devDependencies": {},
   "repository": {
