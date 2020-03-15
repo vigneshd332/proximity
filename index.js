@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("Taking over the World 101 | v3.1.1 'Pink Kestrel'").catch(logger.error);
+	client.user.setActivity("v3.1.1 'Pink Kestrel' | Reading Taking over The World 101").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -61,6 +61,7 @@ client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
+    message.delete(1000);
     awaiting.push(message.author.id);
     let lang = message.content.split(" ")
     let act = lang[1];
