@@ -39,7 +39,6 @@ client.on('message' , msg =>{
     if(msg.author.bot) return;
     else{
         //checks the image and returns a promise.
-        msg.delete(100);
 	const image = image_classify.isImage(msg); //image_check is a function requied from another file
         image.then(
             (value) => {
@@ -115,6 +114,7 @@ client.on("message", function(message) {
     if (message.content.startsWith(`${process.env.prefix}image`)) { // Check if first part of message is image command
  
         // call the image function
+	message.delete(100);
         image(message, parts); // Pass requester message to image function
  
     }
