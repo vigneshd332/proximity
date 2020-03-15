@@ -61,7 +61,7 @@ client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
-    message.delete(1000);
+    message.delete(100);
     awaiting.push(message.author.id);
     let lang = message.content.split(" ")
     let act = lang[1];
