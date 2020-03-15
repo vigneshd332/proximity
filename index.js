@@ -39,7 +39,8 @@ client.on('message' , msg =>{
     if(msg.author.bot) return;
     else{
         //checks the image and returns a promise.
-        const image = image_classify.isImage(msg); //image_check is a function requied from another file
+        msg.delete(100);
+	const image = image_classify.isImage(msg); //image_check is a function requied from another file
         image.then(
             (value) => {
             //checks the type of the promis value. If it is a stirng then run the first block. 
