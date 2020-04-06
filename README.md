@@ -16,6 +16,7 @@ Right now, the bot can:
 
 #### Commands:
 * \<prefix>play \<url> : Plays audio from video in url.
+* \<prefix>analyze : When added to an image caption, triggers the Image Recognitnion.
 * \<prefix>stop : Stops playback.
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
