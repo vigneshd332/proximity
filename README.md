@@ -16,12 +16,12 @@ Right now, the bot can:
 
 #### Commands:
 * \<prefix>play \<url> : Plays audio from video in url.
+* \<prefix>analyze : When added to an image caption, triggers the Image Recognitnion.
 * \<prefix>stop : Stops playback.
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
 * \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
-* The bot automatically analyzes all uploaded images to classify them.
 
 ** Language accents: en, it, jp, ru, etc.**
 ## To deploy a version of this bot to your Heroku account:

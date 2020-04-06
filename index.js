@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("v3.1.2 'Pink Kestrel' | Reading Taking over The World 101").catch(logger.error);
+	client.user.setActivity("v3.2.0 'Pink Kestrel' | Reading Taking over The World 101").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -37,7 +37,7 @@ client.once('disconnect', () => {
 client.on('message' , msg =>{
     //If the message is from the bot then do nothing
     if(msg.author.bot) return;
-    else{
+    else if (msg.content.startsWith(`${process.env.prefix}analyze`)) {
         //checks the image and returns a promise.
 	const image = image_classify.isImage(msg); //image_check is a function requied from another file
         image.then(
@@ -152,18 +152,18 @@ client.on('message', async message => {
 	 	message.channel.send(`**${process.env.prefix}play**` + ' **<link> :** Plays audio from video in link.')
                 message.channel.send(`**${process.env.prefix}stop**` + ' **:** Stops playback.')
                 message.channel.send(`**${process.env.prefix}skip**` + ' **:** Skips to next song in queue.')
+		message.channel.send(`**${process.env.prefix}analyze**` + ' **:** When attached to message or image caption, triggers Image Recognition')
                 message.channel.send(`**${process.env.prefix} image**` + ' **<search term> :** Displays images related to the search term.')
                 message.channel.send(`**${process.env.prefix}bruh**` + ' **:** Displays a bruh gif.')
                 message.channel.send(`**${process.env.prefix}tts**` + ' **<language accent> <text>:** Converts text in any script to audio.')
                 message.channel.send('** Language accents: en, it, jp, ru, etc.**')
-		message.channel.send('I automatically analyze all uploaded images to recognize them. **Linked images are not recognized.** ')
 		message.channel.send('Contact **Vish** if I am not working or borked.')
 		message.channel.send('(P.S Boot his a** if he does not respond)')
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
 	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.1.2 "Pink Kestrel"')
-                message.channel.send('**Build Date :** 12/3/2020')
+                message.channel.send('**Version :** v3.2.0 "Pink Kestrel"')
+                message.channel.send('**Build Date :** 6/4/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
                 message.channel.send('Built using **Node.js**')
 		message.channel.send('We <3 Open-Source!')
@@ -173,6 +173,8 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}bruh`)) {
 		message.channel.send('https://tenor.com/view/bruh-gif-13889648')
 	} else if (message.content.startsWith(`${process.env.prefix}image`)) {
+		return;
+        } else if (message.content.startsWith(`${process.env.prefix}analyze`)) {
 		return;
         } else if (message.content.startsWith(`${process.env.prefix}tts`)) {
 		return;
