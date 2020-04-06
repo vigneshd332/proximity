@@ -37,7 +37,7 @@ client.once('disconnect', () => {
 client.on('message' , msg =>{
     //If the message is from the bot then do nothing
     if(msg.author.bot) return;
-    else{
+    else if (msg.content.startsWith(`${process.env.prefix}analyze`)) {
         //checks the image and returns a promise.
 	const image = image_classify.isImage(msg); //image_check is a function requied from another file
         image.then(
