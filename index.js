@@ -103,6 +103,7 @@ client.on('message', message => {
       } 
 	  else {  console.log("Error Handled");
 		  removeAwaiting(message.author.id);
+		  message.channel.send(usage);
 	  }  
   }
 });
