@@ -182,8 +182,12 @@ client.on('message', async message => {
 		return;
         } else if (message.content.startsWith(`${process.env.prefix}analyze`)) {
 		return;
-        } else if (message.content.startsWith(`${process.env.prefix}tts`)) {
+        } else if (message.content.startsWith(`${process.env.prefix}image`)) {
 		return;
+        } else if (message.content.startsWith(`${process.env.prefix}reset`)) {
+		message.channel.send('Rebooting...')
+                .then(msg => client.destroy())
+                .then(() => client.login(process.env.token));
         } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	} else {
