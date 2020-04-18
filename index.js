@@ -182,7 +182,7 @@ client.on('message', async message => {
 		return;
         } else if (message.content.startsWith(`${process.env.prefix}analyze`)) {
 		return;
-        } else if (message.content.startsWith(`${process.env.prefix}image`)) {
+        } else if (message.content.startsWith(`${process.env.prefix}tts`)) {
 		return;
         } else if (message.content.startsWith(`${process.env.prefix}reset`)) {
 		message.channel.send('Rebooting...')
