@@ -61,7 +61,6 @@ client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
-	  try {
     message.delete(100);
     awaiting.push(message.author.id);
     let lang = message.content.split(" ")
@@ -75,11 +74,7 @@ client.on('message', message => {
       directory: `././audio`,
       filename: `${message.author.id}.mp3`
     }
-              }
-    catch(err => {
-                  message.channel.send ('Improper command format')
-          });
-
+   
     tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
@@ -98,6 +93,7 @@ client.on('message', message => {
           .catch(err => {
             console.error(error);
             removeAwaiting(message.author.id);
+	    return;
           });
       })
       .catch(err => {
