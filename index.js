@@ -105,7 +105,6 @@ client.on('message', message => {
 		  message.channel.send("Use a proper language accent in this format")
 		  message.channel.send(`${process.env.prefix}tts` + " <language accent eg: en, ru, it, ja> <message less than or equal to 200 characters>")
 		  removeAwaiting(message.author.id);
-		  return;
 	  }  
   }
 });
