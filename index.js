@@ -14,7 +14,7 @@ const logger = require("heroku-logger");
 const usage = new Discord.RichEmbed()
   .setTitle("Invalid Usage!")
   .setColor(0xFF0000)
-  .setDescription(".ttmp3 <message less than or equal to 200 characters>");
+  .setDescription(`${process.env.prefix}tts` + " <language accent eg: en, ru, it, ja> <message less than or equal to 200 characters>");
 
 let awaiting = [];
 
@@ -75,7 +75,7 @@ client.on('message', message => {
       filename: `${message.author.id}.mp3`
     }
    
-    tts(toMp3, act, 1)
+    if (act = "en" or "it" or "hi" or "ru" ){ tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
           .then(() =>
@@ -100,6 +100,7 @@ client.on('message', message => {
         message.channel.send(usage);
         removeAwaiting(message.author.id);
       });
+      }
   }
 });
 
