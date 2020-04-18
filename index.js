@@ -75,9 +75,9 @@ client.on('message', message => {
       directory: `././audio`,
       filename: `${message.author.id}.mp3`
     }
+              }
     catch(err => {
-            console.error(error);
-          message.channel.send ('Improper command format')
+                  message.channel.send ('Improper command format')
           });
 
     tts(toMp3, act, 1)
