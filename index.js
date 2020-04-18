@@ -104,6 +104,7 @@ client.on('message', message => {
 	  else {
 		  message.channel.send("Use a proper language accent")
 		  message.channel.send("Eg: en(English), ru(Russian), ja(Japanese)...")
+		  return;
 	  }  
   }
 });
