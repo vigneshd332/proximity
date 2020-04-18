@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.0 | Reading Taking over The World 101").catch(logger.error);
+	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.1 | Reading Taking over The World 101").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -170,8 +170,8 @@ client.on('message', async message => {
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
 	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.2.0')
-                message.channel.send('**Build Date :** 6/4/2020')
+                message.channel.send('**Version :** v3.2.1')
+                message.channel.send('**Build Date :** 19/4/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
                 message.channel.send('Built using **Node.js**')
 		message.channel.send('We <3 Open-Source!')
