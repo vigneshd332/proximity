@@ -75,7 +75,7 @@ client.on('message', message => {
       filename: `${message.author.id}.mp3`
     }
    
-    if (act === "en" || act === "it" || act == "hi" || act === "ru" ){ tts(toMp3, act, 1)
+    if (act.content.startsWith("en") || act === "it" || act == "hi" || act === "ru" ){ tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
           .then(() =>
@@ -102,8 +102,8 @@ client.on('message', message => {
       });
       } 
 	  else {
-		  message.channel.send("Use a proper language accent")
-		  message.channel.send("Eg: en(English), ru(Russian), ja(Japanese)...")
+		  message.channel.send("Use a proper language accent in this format")
+		  message.channel.send(`${process.env.prefix}tts` + " <language accent eg: en, ru, it, ja> <message less than or equal to 200 characters>")
 		  removeAwaiting(message.author.id);
 		  return;
 	  }  
