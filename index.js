@@ -75,7 +75,7 @@ client.on('message', message => {
       filename: `${message.author.id}.mp3`
     }
    
-    if (act === "en" || act === "it" || act == "hi" || act === "ru" ){ tts(toMp3, act, 1)
+    if (act === "en" || act === "it" || act == "hi" || act === "ru" || act === "en-US" || act === "en-UK" ){ tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
           .then(() =>
