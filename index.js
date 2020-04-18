@@ -191,7 +191,7 @@ client.on('message', async message => {
         } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	} else {
-		message.channel.send('I dont know what you are talking about! ')
+		return;
 	}
 });
 
