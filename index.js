@@ -14,7 +14,7 @@ const logger = require("heroku-logger");
 const usage = new Discord.RichEmbed()
   .setTitle("Invalid Usage!")
   .setColor(0xFF0000)
-  .setDescription(".ttmp3 <message less than or equal to 200 characters>");
+  .setDescription(`${process.env.prefix}tts` + " <language accent eg: en, ru, it, ja> <message less than or equal to 200 characters>");
 
 let awaiting = [];
 
@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("v3.2.0 'Pink Kestrel' | Reading Taking over The World 101").catch(logger.error);
+	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.1 | Reading Taking over The World 101").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -74,8 +74,8 @@ client.on('message', message => {
       directory: `././audio`,
       filename: `${message.author.id}.mp3`
     }
-
-    tts(toMp3, act, 1)
+   
+    if (act === "en" || act === "it" || act == "hi" || act === "ru" || act === "en-US" || act === "en-UK" ){ tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
           .then(() =>
@@ -93,12 +93,20 @@ client.on('message', message => {
           .catch(err => {
             console.error(error);
             removeAwaiting(message.author.id);
+	    return;
           });
       })
       .catch(err => {
         message.channel.send(usage);
         removeAwaiting(message.author.id);
       });
+      } 
+	  else {
+		  message.channel.send("Use a proper language accent in this format")
+		  message.channel.send(`${process.env.prefix}tts` + " <language accent eg: en, ru, it, ja> <message less than or equal to 200 characters>")
+		  removeAwaiting(message.author.id);
+		  return;
+	  }  
   }
 });
 
@@ -162,8 +170,8 @@ client.on('message', async message => {
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
 	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.2.0 "Pink Kestrel"')
-                message.channel.send('**Build Date :** 6/4/2020')
+                message.channel.send('**Version :** v3.2.1')
+                message.channel.send('**Build Date :** 19/4/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
                 message.channel.send('Built using **Node.js**')
 		message.channel.send('We <3 Open-Source!')
@@ -181,7 +189,7 @@ client.on('message', async message => {
         } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
 	} else {
-		message.channel.send('I dont know what you are talking about! ')
+		return;
 	}
 });
 
