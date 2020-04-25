@@ -59,6 +59,11 @@ client.on('message' , msg =>{
 });
 client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
+	if (message.toLowerCase().includes("nigger".toLowerCase()) || message.toLowerCase().includes("nigga".toLowerCase()) || message.toLowerCase().includes("fag".toLowerCase()) || message.toLowerCase().includes("faggot".toLowerCase()) || message.toLowerCase().includes("nigguh".toLowerCase())) {
+		message.delete(10);
+		message.channel.send("No slurs, loser")
+	     
+	    }
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
     message.delete(100);
