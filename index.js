@@ -124,9 +124,7 @@ client.on("message", function(message) {
  
     /* Simple command manager */
     if (message.content.startsWith(`${process.env.prefix}image`)) { // Check if first part of message is image command
- 
-        // call the image function
-	message.delete(100);
+	    
         image(message, parts); // Pass requester message to image function
  
     }
