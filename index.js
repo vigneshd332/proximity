@@ -59,6 +59,12 @@ client.on('message' , msg =>{
 });
 client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
+	message.toString().toLowerCase();
+	if ( message.toString().toLowerCase().includes("nigger") || message.toString().toLowerCase().includes("nigga") || message.toString().toLowerCase().includes("fag") || message.toString().toLowerCase().includes("faggot") || message.toString().toLowerCase().includes("nigguh")) {
+		message.delete(10);
+		message.channel.send("No slurs, " + message.author )
+	     
+	    }
 
   if (message.content.startsWith(`${process.env.prefix}tts`)) {
     message.delete(100);
@@ -118,9 +124,7 @@ client.on("message", function(message) {
  
     /* Simple command manager */
     if (message.content.startsWith(`${process.env.prefix}image`)) { // Check if first part of message is image command
- 
-        // call the image function
-	message.delete(100);
+	    
         image(message, parts); // Pass requester message to image function
  
     }
