@@ -59,7 +59,7 @@ client.on('message' , msg =>{
 });
 client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
-	message.toLowerCase();
+	message.toString().toLowerCase();
 	if (message.includes("nigger") || message.includes("nigga") || message.includes("fag") || message.includes("faggot") || message.includes("nigguh")) {
 		message.delete(10);
 		message.channel.send("No slurs, loser")
