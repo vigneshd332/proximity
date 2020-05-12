@@ -151,7 +151,7 @@ client.on('message', async message => {
 		message.channel.send('сука блять!')
 	} else if (message.content.startsWith(`${process.env.prefix}reboot`)) {
 		resetBot(message.channel);
-                break;
+                return;
 	} else if (message.content.startsWith(`${process.env.prefix}babushka`)) {
 		message.channel.send('Yeah, she is drunk or smoking weed right now.')
 	} else if (message.content.startsWith(`${process.env.prefix}nettle`)) {
