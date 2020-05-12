@@ -150,7 +150,7 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}blyat`)) {
 		message.channel.send('сука блять!')
 	} else if (message.content.startsWith(`${process.env.prefix}reboot`)) {
-		resetBot(message.channel);
+		resetBot(message);
                 return;
 	} else if (message.content.startsWith(`${process.env.prefix}babushka`)) {
 		message.channel.send('Yeah, she is drunk or smoking weed right now.')
@@ -198,15 +198,15 @@ client.on('message', async message => {
 		return;
 	}
 });
-function resetBot(channel) {
+function resetBot(message) {
     if (message.author.id === "432474514534957057"){
-     channel.send('Master Reboot Initiated...')
-    .then(msg => client.destroy())
+     message.channel.send('Master Reboot Initiated...')
+    .then(message => client.destroy())
     .then(() => client.login(process.env.token));
-	    channel.send('Reboot Complete')
+	    message.channel.send('Reboot Complete')
 	}
 	else{
-	    channel.send('Permission Denied')
+	    message.channel.send('Permission Denied')
         }
 }
 
