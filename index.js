@@ -297,7 +297,7 @@ function image(message, parts) {
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
 
 	var options = {
-	    url: "http://results.dogpile.com/serp?qc=images&q=" + search,
+	    url: "https://www.dogpile.com/serp?qc=images&q=" + search + "&capv=iLTjemasNqjegwR_UdH2YCEUiIhYjMN4Bo6oC9Ghc2x9toMka1N4gQdbzk25RV2r",
 	    method: "GET",
 	    headers: {
 	        "Accept": "text/html",
