@@ -214,11 +214,11 @@ function resetBot(message) {
 }
 function antisnipe(message) {
 	 if (message.author.id === "432474514534957057"){
-		 message.reply('Invalid command')
+		 message.delete(3000);
+		 message.reply(':sunglasses:')
   .then(msg => {
     msg.delete(100)
   })
-		 message.delete(3000);
 	 }
 	else {
 		message.channel.send('I aint doin the dirty work of cleaning up your shit');
