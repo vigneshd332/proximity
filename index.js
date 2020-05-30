@@ -217,7 +217,7 @@ function antisnipe(message) {
 		 message.delete(3000);
 		 message.reply(':sunglasses:')
   .then(msg => {
-    msg.delete(100)
+    msg.delete(3100)
   })
 	 }
 	else {
