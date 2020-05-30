@@ -194,6 +194,9 @@ client.on('message', async message => {
 		return;
         } else if (message.content.startsWith(`${process.env.prefix}sarosh`)) {
 		message.channel.send('Poor soul got his ass eaten by a raving bitch (Yeah you, **charlyy**). Lets play osu! to mourn his passing.')
+	} else if (message.content.startsWith(`${process.env.prefix}hd`)) {
+		hyperdelete(message);
+		return;
 	} else {
 		return;
 	}
@@ -208,6 +211,14 @@ function resetBot(message) {
 	else{
 	    message.channel.send('Permission Denied')
         }
+}
+function hyperdelete(message) {
+	 if (message.author.id === "432474514534957057"){
+		 message.delete(10);
+	 }
+	else {
+		message.channel.send('I aint doin the dirty work of cleaning up your shit');
+	}
 }
 
 async function execute(message, serverQueue) {
