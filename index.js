@@ -338,7 +338,9 @@ function image(message, parts) {
 		}
 
 		// Send result
-		message.channel.send( urls[0] );
+		var size = urls.length;
+		var end = Math.floor(Math.random() * size)
+		message.channel.send( urls[end] );
 	});
 }
 client.login(process.env.token);
