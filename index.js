@@ -382,8 +382,14 @@ function image(message, parts) {
 
 		// Send result
 		var size = urls.length;
-		var end = Math.floor(Math.random() * size)
+		if(size>5){
+		var end = Math.floor(Math.random() * 5)
 		message.channel.send( urls[end] );
+		}
+		else     {
+			var end2 = Math.floor(Math.random() * 5)
+			message.channel.send ( urls[end] );
+		}
 	});
 }
 client.login(process.env.token);
