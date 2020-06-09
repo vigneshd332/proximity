@@ -22,6 +22,7 @@ Right now, the bot can:
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
 * \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
+* \<prefix>gif  \<search term>  : Displays a gif related to the search term.
 
 ** Language accents: en, it, jp, ru, etc.**
 ## To deploy a version of this bot to your Heroku account:
