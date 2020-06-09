@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.1 | Hi Thu, UwU").catch(logger.error);
+	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.2").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
