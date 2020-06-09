@@ -13,6 +13,7 @@ Right now, the bot can:
 * token = Your unique Discord API Token from the bot's account.
 * watson_key = Your unique IBM API key from IBM Cloud.
 * watson_url = The URL in IBM Cloud with the API Key.
+* giphykey = Your unique Giphy API key
 
 #### Commands:
 * \<prefix>play \<url> : Plays audio from video in url.
