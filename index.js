@@ -218,8 +218,7 @@ client.on('message', async message => {
 		message.channel.send('(P.S Boot his a** if he does not respond)')
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
-	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.2.1')
+                message.channel.send('**Version :** v3.2.2')
                 message.channel.send('**Build Date :** 19/4/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
                 message.channel.send('Built using **Node.js**')
@@ -259,9 +258,6 @@ function hyperdelete(message) {
 	 if (message.author.id === "432474514534957057"){
 		 message.delete(10);
 	 }
-	else {
-		message.channel.send('I aint doin the dirty work of cleaning up your shit');
-	}
 }
 
 async function execute(message, serverQueue) {
