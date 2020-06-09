@@ -1,6 +1,6 @@
 {
   "name": "bot-discord-athena",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Kinda do it all.",
   "main": "index.js",
   "scripts": {
