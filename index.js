@@ -239,6 +239,14 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}hd`)) {
 		hyperdelete(message);
 		return;
+	} else if (message.content.startsWith(`${process.env.prefix}noncify`)) {
+		var pieces = message.content.split(' ');
+		var user = pieces[1];
+		pieces.shift();
+                pieces = pieces.join(" ");
+		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
+		image(message, pieces);
+		return;
 	} else {
 		return;
 	}
