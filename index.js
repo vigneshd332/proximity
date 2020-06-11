@@ -208,11 +208,16 @@ client.on('message', async message => {
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}noncify`)) {
 		var pieces = message.content.split(' ');
+		if(pieces.length>=2) {
 		var user = pieces[1];
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
 		var nonce = 'user nonce';
 		pieces = nonce.split(' ');
 		image(message, pieces);
+		}
+		else {
+			message.channel.send("Please mention a user");
+		}
 		return;
 	} else {
 		return;
