@@ -63,41 +63,8 @@ client.on('message', (message) => {
 
   if (message.content.startsWith(`${process.env.prefix}gif`))
   {
-    // Split message to search GIPHY
-    let splitWord = message.toString().split(" ");
-    let gifWord   = "";
-
-    // Loop through incase of multiple word search
-    for( var i = 1; i < splitWord.length; i++)
-    {
-      if(i > 1)
-      {
-        gifWord = gifWord + "+";
-      }
-
-      gifWord = gifWord + splitWord[i];
-    }
-
-    request("http://api.giphy.com/v1/gifs/search?q=" + gifWord + "&api_key=" + process.env.giphykey + "&limit=100", function (error, response, body)
-    {
-      if (!error && response.statusCode == 200)
-      {
-        // Convert body to JSON object
-        let jsonUrl = JSON.parse(body);
-
-        // Get random number to choose GIF
-        let totGif = jsonUrl.data.length;
-
-        if(totGif > 100)
-        {
-          totGif = 100;
-        }
-
-        let ranNum = Math.floor(Math.random() * totGif);
-
-        message.channel.sendMessage(jsonUrl.data[ranNum].url);
-      }
-    });
+   let splitWord = message.toString().split(" ");
+   gif(message, splitWord);
   }
 });
 client.on('message', message => {
@@ -245,7 +212,7 @@ client.on('message', async message => {
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
 		var nonce = 'user nonce gif';
 		pieces = nonce.split(' ');
-		image(message, pieces);
+		gif(message, pieces);
 		return;
 	} else {
 		return;
@@ -349,7 +316,6 @@ function play(guild, song) {
 }
 function image(message, parts) {
 	const args = message.content.split(' ');
-
 	/* extract search query from message */
 
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
@@ -395,5 +361,42 @@ function image(message, parts) {
 			message.channel.send ( urls[end] );
 		}
 	});
+}
+function gif(message, splitWord) {
+	 // Split message to search GIPHY
+    let gifWord   = "";
+    console.log(splitWord)
+
+    // Loop through incase of multiple word search
+    for( var i = 1; i < splitWord.length; i++)
+    {
+      if(i > 1)
+      {
+        gifWord = gifWord + "+";
+      }
+
+      gifWord = gifWord + splitWord[i];
+    }
+
+    request("http://api.giphy.com/v1/gifs/search?q=" + gifWord + "&api_key=" + process.env.giphykey + "&limit=100", function (error, response, body)
+    {
+      if (!error && response.statusCode == 200)
+      {
+        // Convert body to JSON object
+        let jsonUrl = JSON.parse(body);
+
+        // Get random number to choose GIF
+        let totGif = jsonUrl.data.length;
+
+        if(totGif > 100)
+        {
+          totGif = 100;
+        }
+
+        let ranNum = Math.floor(Math.random() * totGif);
+
+        message.channel.sendMessage(jsonUrl.data[ranNum].url);
+      }
+    });
 }
 client.login(process.env.token);
