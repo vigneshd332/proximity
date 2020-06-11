@@ -24,7 +24,7 @@ const queue = new Map();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.1 | Hi Thu, UwU").catch(logger.error);
+	client.user.setActivity("Use " + `${process.env.prefix}help` + " v3.2.2").catch(logger.error);
 });
 
 client.once('reconnecting', () => {
@@ -63,41 +63,8 @@ client.on('message', (message) => {
 
   if (message.content.startsWith(`${process.env.prefix}gif`))
   {
-    // Split message to search GIPHY
-    let splitWord = message.toString().split(" ");
-    let gifWord   = "";
-
-    // Loop through incase of multiple word search
-    for( var i = 1; i < splitWord.length; i++)
-    {
-      if(i > 1)
-      {
-        gifWord = gifWord + "+";
-      }
-
-      gifWord = gifWord + splitWord[i];
-    }
-
-    request("http://api.giphy.com/v1/gifs/search?q=" + gifWord + "&api_key=" + process.env.giphykey + "&limit=100", function (error, response, body)
-    {
-      if (!error && response.statusCode == 200)
-      {
-        // Convert body to JSON object
-        let jsonUrl = JSON.parse(body);
-
-        // Get random number to choose GIF
-        let totGif = jsonUrl.data.length;
-
-        if(totGif > 100)
-        {
-          totGif = 100;
-        }
-
-        let ranNum = Math.floor(Math.random() * totGif);
-
-        message.channel.sendMessage(jsonUrl.data[ranNum].url);
-      }
-    });
+   let splitWord = message.toString().split(" ");
+   gif(message, splitWord);
   }
 });
 client.on('message', message => {
@@ -218,8 +185,7 @@ client.on('message', async message => {
 		message.channel.send('(P.S Boot his a** if he does not respond)')
 		return;
 	} else if (message.content.startsWith(`${process.env.prefix}about`)) {
-	 	message.channel.send('Well, Well. I see you are interested. But I am taken. Sorry!')
-                message.channel.send('**Version :** v3.2.1')
+                message.channel.send('**Version :** v3.2.2')
                 message.channel.send('**Build Date :** 19/4/2020')
                 message.channel.send('**Hosted on :** Heroku (Stack 18)')
                 message.channel.send('Built using **Node.js**')
@@ -240,6 +206,19 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}hd`)) {
 		hyperdelete(message);
 		return;
+	} else if (message.content.startsWith(`${process.env.prefix}noncify`)) {
+		var pieces = message.content.split(' ');
+		if(pieces.length>=2) {
+		var user = pieces[1];
+		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
+		var nonce = 'user nonce';
+		pieces = nonce.split(' ');
+		image(message, pieces);
+		}
+		else {
+			message.channel.send("Please mention a user");
+		}
+		return;
 	} else {
 		return;
 	}
@@ -259,9 +238,6 @@ function hyperdelete(message) {
 	 if (message.author.id === "432474514534957057"){
 		 message.delete(10);
 	 }
-	else {
-		message.channel.send('I aint doin the dirty work of cleaning up your shit');
-	}
 }
 
 async function execute(message, serverQueue) {
@@ -345,11 +321,10 @@ function play(guild, song) {
 }
 function image(message, parts) {
 	const args = message.content.split(' ');
-
 	/* extract search query from message */
 
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
-
+        console.log(search);
 	var options = {
 	    url: "https://www.dogpile.com/serp?qc=images&q=" + search + "&capv=iLTjemasNqjegwR_UdH2YCEUiIhYjMN4Bo6oC9Ghc2x9toMka1N4gQdbzk25RV2r",
 	    method: "GET",
@@ -391,5 +366,42 @@ function image(message, parts) {
 			message.channel.send ( urls[end] );
 		}
 	});
+}
+function gif(message, splitWord) {
+	 // Split message to search GIPHY
+    let gifWord   = "";
+    console.log(splitWord)
+
+    // Loop through incase of multiple word search
+    for( var i = 1; i < splitWord.length; i++)
+    {
+      if(i > 1)
+      {
+        gifWord = gifWord + "+";
+      }
+
+      gifWord = gifWord + splitWord[i];
+    }
+
+    request("http://api.giphy.com/v1/gifs/search?q=" + gifWord + "&api_key=" + process.env.giphykey + "&limit=100", function (error, response, body)
+    {
+      if (!error && response.statusCode == 200)
+      {
+        // Convert body to JSON object
+        let jsonUrl = JSON.parse(body);
+
+        // Get random number to choose GIF
+        let totGif = jsonUrl.data.length;
+
+        if(totGif > 100)
+        {
+          totGif = 100;
+        }
+
+        let ranNum = Math.floor(Math.random() * totGif);
+
+        message.channel.sendMessage(jsonUrl.data[ranNum].url);
+      }
+    });
 }
 client.login(process.env.token);

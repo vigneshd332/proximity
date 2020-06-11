@@ -13,6 +13,7 @@ Right now, the bot can:
 * token = Your unique Discord API Token from the bot's account.
 * watson_key = Your unique IBM API key from IBM Cloud.
 * watson_url = The URL in IBM Cloud with the API Key.
+* giphykey = Your unique Giphy API key
 
 #### Commands:
 * \<prefix>play \<url> : Plays audio from video in url.
@@ -22,6 +23,7 @@ Right now, the bot can:
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
 * \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
+* \<prefix>gif  \<search term>  : Displays a gif related to the search term.
 
 ** Language accents: en, it, jp, ru, etc.**
 ## To deploy a version of this bot to your Heroku account:
