@@ -210,9 +210,9 @@ client.on('message', async message => {
 		var pieces = message.content.split(' ');
 		var user = pieces[1];
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
-		var nonce = 'user nonce gif';
+		var nonce = 'user nonce';
 		pieces = nonce.split(' ');
-		gif(message, pieces);
+		image(message, pieces);
 		return;
 	} else {
 		return;
