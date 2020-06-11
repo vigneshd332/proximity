@@ -242,9 +242,9 @@ client.on('message', async message => {
 	} else if (message.content.startsWith(`${process.env.prefix}noncify`)) {
 		var pieces = message.content.split(' ');
 		var user = pieces[1];
-		pieces.shift();
-                pieces = pieces.join(" ");
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
+		var nonce = 'user pedophile';
+		pieces = nonce.content.split(' ');
 		image(message, pieces);
 		return;
 	} else {
