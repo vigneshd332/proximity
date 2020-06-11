@@ -244,7 +244,7 @@ client.on('message', async message => {
 		var user = pieces[1];
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
 		var nonce = 'user pedophile';
-		pieces = nonce.content.split(' ');
+		pieces = nonce.split(' ');
 		image(message, pieces);
 		return;
 	} else {
