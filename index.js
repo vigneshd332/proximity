@@ -243,7 +243,7 @@ client.on('message', async message => {
 		var pieces = message.content.split(' ');
 		var user = pieces[1];
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
-		var nonce = 'user pedophile';
+		var nonce = 'user nonce gif';
 		pieces = nonce.split(' ');
 		image(message, pieces);
 		return;
@@ -353,7 +353,7 @@ function image(message, parts) {
 	/* extract search query from message */
 
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
-
+        console.log(search);
 	var options = {
 	    url: "https://www.dogpile.com/serp?qc=images&q=" + search + "&capv=iLTjemasNqjegwR_UdH2YCEUiIhYjMN4Bo6oC9Ghc2x9toMka1N4gQdbzk25RV2r",
 	    method: "GET",
