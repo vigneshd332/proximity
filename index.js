@@ -219,6 +219,17 @@ client.on('message', async message => {
 			message.channel.send("Please mention a user");
 		}
 		return;
+	} else if (message.content.startsWith(`${process.env.prefix}simpify`)) {
+		var pieces = message.content.split(' ');
+		if(pieces.length>=2) {
+		var user = pieces[1];
+		message.channel.send('PewDiePie declares that ' + user + ' is offcially a simp!');
+		message.channel.send('https://tenor.com/view/simping-simp-pewdiepie-you-are-pointing-gif-17092288')
+		}
+		else {
+			message.channel.send("Please mention a user");
+		}
+		return;
 	} else {
 		return;
 	}
