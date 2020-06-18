@@ -211,7 +211,7 @@ client.on('message', async message => {
 		if(pieces.length>=2) {
 		var user = pieces[1];
 		message.channel.send('Hello I am Chris Hansen, and ' + user + ' is offcially a nonce!');
-		var nonce = 'user nonce';
+		var nonce = 'user chris hansen';
 		pieces = nonce.split(' ');
 		image(message, pieces);
 		}
