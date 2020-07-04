@@ -69,6 +69,7 @@ client.on('message', (message) => {
 });
 client.on('message', message => {
   if (awaiting.includes(message.author.id)) return;
+  if (message.guild.id == '706498363599880204') return;
 	message.toString().toLowerCase();
 	if ( message.toString().toLowerCase().includes("nigger") || message.toString().toLowerCase().includes("nigga") || message.toString().toLowerCase().includes("fag") || message.toString().toLowerCase().includes("faggot") || message.toString().toLowerCase().includes("nigguh")|| message.toString().toLowerCase().includes("niggur")) {
 		message.delete(10);
