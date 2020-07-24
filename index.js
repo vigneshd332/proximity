@@ -338,7 +338,7 @@ function image(message, parts) {
 	var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
         console.log(search);
 	var options = {
-	    url: "https://www.dogpile.com/serp?qc=images&q=" + search + "&capv=iLTjemasNqjegwR_UdH2YCEUiIhYjMN4Bo6oC9Ghc2x9toMka1N4gQdbzk25RV2r",
+	    url: "https://www.dogpile.com/serp?qc=images&q=" + search + "&capv=" + process.env.captcha_key,
 	    method: "GET",
 	    headers: {
 	        "Accept": "text/html",
@@ -370,7 +370,7 @@ function image(message, parts) {
 		// Send result
 		var size = urls.length;
 		if(size>5){
-		var end = Math.floor(Math.random() * 5)
+		var end = Math.floor(Math.random() * 10)
 		message.channel.send( urls[end] );
 		}
 		else     {
