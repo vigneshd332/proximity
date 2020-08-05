@@ -1,5 +1,5 @@
-# A Discord Bot
-##### bot-discord-random
+# Proximity
+##### A Discord Bot
 Just a thing I've been working on, a bot for Discord. I'm currently hosting my bot on Heroku. Feel free to contact or ask me anything by opening an issue.
 There are two branches: master (stable) and staging (development). Thanks to Donald Jennings for a huge part of the code. 
 Check out his repo at: https://github.com/DonaldJennings/Hephaestus-Bot
