@@ -1,37 +1,69 @@
 {
-  "name": "bot-discord-athena",
-  "version": "3.2.2",
-  "description": "Kinda do it all.",
-  "main": "index.js",
-  "scripts": {
-    "test": "!test",
-    "start": "node index.js"
-  },
-  "author": "The-Vector",
-  "license": "ISC",
+  "name": "proximity",
+  "version": "1.1.0",
+  "description": "a simple discord bot using nodejs",
+  "main": "bot.js",
   "engines": {
-    "npm": "6.14.4",
-    "node": "12.16.2"
-},
-  "dependencies": {
-    "ytdl-core": "^2.1.7",
-    "discord.js": "^11.5.1",
-    "node-opus": "^0.3.3",
-    "cheerio": "^1.0.0-rc.3",
-    "request": "^2.88.0",
-    "watson-developer-cloud": "^3.8.0",
-    "download-file": "^0.1.5",
-    "google-tts-api": "0.0.4",
-    "heroku-logger": "^0.3.3"
+    "node": "12.18.0"
   },
-  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vigneshd332/bot-discord-random.git"
+    "url": "git+https://github.com/vigneshd332/proximity.git"
   },
+  "keywords": [
+    "Bot",
+    "JavaScript",
+    "DiscordAPI",
+    "DiscordJS",
+    "Music Bot",
+    "Discord",
+    "Discord Music Bot",
+    "Hephaestus Bot",
+    "Moderation",
+    "Discord Moderation Bot",
+    "DiscordJS Documentation"
+  ],
+  "author": "Vignesh D",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vigneshd332/bot-discord-random/issues"
+    "url": "https://github.com/vigneshd332/proximity/issues"
   },
-  "homepage": "https://github.com/vigneshd332/bot-discord-random#readme",
-  "keywords": []
+  "homepage": "https://github.com/vigneshd332/proximity#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "canvas": "^2.6.1",
+    "cheerio": "^1.0.0-rc.3",
+    "discord": "^0.8.2",
+    "discord-player": "^1.4.1",
+    "discord-youtube-api": "^0.1.0",
+    "discord.js": "^12.2.0",
+    "discord.js-commando": "^0.10.0",
+    "discord.js-musicbot-addon": "^13.9.1",
+    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.1.0",
+    "download-file": "^0.1.5",
+    "fs": "0.0.1-security",
+    "genius-api": "^0.4.1",
+    "get-youtube-playlist-id": "0.0.1",
+    "google-tts-api": "0.0.4",
+    "googleapis": "^52.0.0",
+    "heroku-logger": "^0.3.3",
+    "js": "^0.1.0",
+    "lodash": "^4.17.19",
+    "node-fetch": "^2.6.0",
+    "node-opus": "^0.3.3",
+    "node-pre-gyp": "^0.14.0",
+    "puppeteer": "^3.3.0",
+    "request": "^2.88.0",
+    "sequelize": "^5.21.11",
+    "sqlite3": "^4.2.0",
+    "superagent": "^5.2.2",
+    "watson-developer-cloud": "^3.8.0",
+    "youtube-search": "^1.1.4",
+    "ytdl-core-discord": "^1.2.0"
+  }
 }
