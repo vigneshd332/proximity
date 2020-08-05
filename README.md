@@ -15,7 +15,10 @@ Right now, the bot can:
 * token = Your unique Discord API Token from the bot's account.
 * watson_key = Your unique IBM API key from IBM Cloud.
 * watson_url = The URL in IBM Cloud with the API Key.
-* giphykey = Your unique Giphy API key
+* giphykey = Your unique Giphy API key.
+* youtubeKey = Your unique YouTube API key.
+* ownerid = Your Discord ID (the one made up entirely of numbers).
+* GENIUS_KEY = Your unique Genius API key.
 
 #### Commands:
 * \<prefix>play \<song> : Plays song from YouTube
