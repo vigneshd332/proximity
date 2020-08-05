@@ -1,7 +1,8 @@
 # A Discord Bot
 ##### bot-discord-random
 Just a thing I've been working on, a bot for Discord. I'm currently hosting my bot on Heroku. Feel free to contact or ask me anything by opening an issue.
-There are two branches: master (stable) and staging (development).
+There are two branches: master (stable) and staging (development). Thanks to Donald Jennings for a huge part of the code. 
+Check out his repo at: https://github.com/DonaldJennings/Hephaestus-Bot
 
 Right now, the bot can:
 * Play Songs
@@ -17,7 +18,7 @@ Right now, the bot can:
 * giphykey = Your unique Giphy API key
 
 #### Commands:
-* \<prefix>play \<url> : Plays audio from video in url.
+* \<prefix>play \<song> : Plays song from YouTube
 * \<prefix>analyze : When added to an image caption, triggers the Image Recognitnion.
 * \<prefix>stop : Stops playback.
 * \<prefix>skip : Skips to next song in queue.
@@ -44,8 +45,7 @@ It's better to do it in order.
 * Find the The Api Key and Url in the resource details and keep a copy of it (again, privately),
 
 ### Stuff to do in Heroku:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vigneshd332/bot-discord-random)
-* Hit the button above and login,
+* Fork this repo and deploy to Heroku.
 * You must see your bot should be building in the application logs or in the overview. If not, then manually deploy it.
 * Start the worker dyno "npm start" in the overview. The "web" dyno switches off randomly so its better to keep it off.
 ### Pro Tips:
