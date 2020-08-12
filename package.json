@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "npm start",
-    "start": "node bot.js & npm audit fix"
+    "start": "npm audit fix & node bot.js"
   },
   "repository": {
     "type": "git",
