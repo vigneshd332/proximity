@@ -1,6 +1,6 @@
 # Proximity
 ##### A Discord Bot
-Just a thing I've been working on, a bot for Discord. I'm currently hosting my bot on Heroku. Thanks to Donald Jennings for a huge part of the code. 
+A multipurpose Discord with Image search, AI Image recognition and a music player. I'm currently hosting my bot on Heroku. Thanks to Donald Jennings for a huge part of the code. 
 Check out his repo at: https://github.com/DonaldJennings/Hephaestus-Bot
 
 Right now, the bot can:
@@ -21,13 +21,16 @@ Right now, the bot can:
 
 #### Commands:
 * \<prefix>play \<song> : Plays song from YouTube
-* \<prefix>analyze : When added to an image caption, triggers the Image Recognitnion.
+* \<prefix>analyze + image attachment: When added to an image caption, triggers the Image Recognitnion.
 * \<prefix>stop : Stops playback.
 * \<prefix>skip : Skips to next song in queue.
 * \<prefix>image \<search term> : Displays images related to the search term.
 * \<prefix>bruh : Displays a bruh gif.
 * \<prefix>tts \<language accent> \<text>: Converts text in any script to audio.
 * \<prefix>gif  \<search term>  : Displays a gif related to the search term.
+* \<prefix>lyrics  \<search term>  : Searches and displays lyrics from Genius.com.
+* \<prefix>kick  \<memeber>  : Kicks member.
+* \<prefix>ban  \<member>  : Bans member.
 
 ** Language accents: en, it, jp, ru, etc.**
 ## To deploy a version of this bot to your Heroku account:
