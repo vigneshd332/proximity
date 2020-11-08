@@ -19,6 +19,10 @@ Right now, the bot can:
 * ownerid = Your Discord ID (the one made up entirely of numbers).
 * GENIUS_KEY = Your unique Genius API key.
 
+#### Heroku Buildpacks
+* FFMpeg Buildback https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
+* Official Nodejs Buildpack heroku/nodejs
+
 #### Commands:
 * \<prefix>play \<song> : Plays song from YouTube
 * \<prefix>analyze + image attachment: When added to an image caption, triggers the Image Recognitnion.
