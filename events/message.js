@@ -13,7 +13,6 @@ module.exports = async (client, message) => {
         if (!message.content.startsWith(`${process.env.prefix}confess`)) return;
         let conf = message.content.split(" ");
         conf.shift();
-        conf.shift();
         conf = conf.join(" ");
         
         embed = new MessageEmbed();
