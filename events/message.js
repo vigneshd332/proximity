@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
-const { RichEmbed } = require('discord.js');
-let embed = new RichEmbed();
+const { MessageEmbed } = require('discord.js');
+let embed = new MessageEmbed();
 module.exports = async (client, message) => {
 
     const cooldowns = new Discord.Collection();
@@ -11,7 +11,7 @@ module.exports = async (client, message) => {
         if (message.author.bot) return;
         if (!message.content.startsWith(`${process.env.prefix}confess`)) return;
         
-        embed = new RichEmbed();
+        embed = new MessageEmbed();
         embed.setColor(16712480);
         embed.setTitle(message.content);
         embed.setDescription('I read these confessions and send them to Zuckerberg LOL');
