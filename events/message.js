@@ -6,7 +6,17 @@ module.exports = async (client, message) => {
 
     //If message doesnt start with prefix or is a bot message
     if (!message.content.startsWith(client.config.prefix) || message.author.bot) return;
-
+    if (message.channel.type === 'dm'){
+        if (message.author.bot) return;
+        if (!message.content.startsWith(`${process.env.prefix}confess`)) return;
+        
+        embed = new RichEmbed();
+        embed.setColor(16712480);
+        embed.setTitle(message.content);
+        embed.setDescription('I read these confessions and send them to Zuckerberg LOL');
+        const conchannel = client.channels.cache.find(channel => channel.id === '688997812880670912')
+              conchannel.send(message)
+    }
     //Splits args and command
     const args = message.content.slice(client.config.prefix.length).split(' ');
     const commandName = args.shift().toLowerCase();
