@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const { RichEmbed } = require('discord.js');
-
+let embed = new RichEmbed();
 module.exports = async (client, message) => {
 
     const cooldowns = new Discord.Collection();
