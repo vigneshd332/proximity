@@ -1,7 +1,6 @@
 # Proximity
 ##### A Discord Bot
-A multipurpose Discord with Image search, AI Image recognition and a music player. I'm currently hosting my bot on Heroku. Thanks to Donald Jennings for a huge part of the code. 
-Check out his repo at: https://github.com/DonaldJennings/Hephaestus-Bot
+A multipurpose Discord with Image search, AI Image recognition and a music player, designed to be hosted on Heroku.
 
 Right now, the bot can:
 * Play Songs
