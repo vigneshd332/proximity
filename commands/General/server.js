@@ -20,5 +20,5 @@ module.exports = {
         .addField(`**Server Creation**`, `${message.guild.createdAt}`, true)
         .setFooter(`Proximity | Footer`, parent.client.user.displayAvatarURL());
         message.channel.send(sembed);
-	}   
+	}
 };

@@ -28,12 +28,12 @@ module.exports = {
       return;
     }
     toMp3 = nickname + " says " + toMp3;
-    
+
     let options = {
       directory: `././audio`,
       filename: `${message.author.id}.mp3`
     }
-   
+
     if (act === "en" || act === "it" || act == "hi" || act === "ru" || act === "en-US" || act === "en-UK" ){ tts(toMp3, act, 1)
       .then(url => {
         download(url, options)
@@ -59,17 +59,17 @@ module.exports = {
         message.channel.send(usage);
         removeAwaiting(message.author.id);
       });
-      } 
-	  else { 
+      }
+	  else {
 		  removeAwaiting(message.author.id);
 		  message.channel.send(usage);
-      } 
-      
+      }
+
       function removeAwaiting(id) {
         awaiting = awaiting.filter(awaiter => awaiter != id);
-      } 
+      }
   }
-  
+
 };
 
 

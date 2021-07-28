@@ -24,8 +24,8 @@ module.exports = {
             commands.forEach((command) => {
                 HEmbed.addField(`${command.name}`, `${command.description}`, true)
             });
-                
-            
+
+
 
             return message.author.send({ split: true, embed: HEmbed })
                 .then(() => {

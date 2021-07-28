@@ -38,14 +38,14 @@ module.exports = {
                     return message.channel.send(" You need to be a Hephaestus Premium member to use this feature. Please contact your Server Admin for more info ")
 
                 }
-                
+
 
             } else {
 
                 return message.channel.send("Volume command only accepts positive/neutral Numerical input...Also fuck you matthew")
 
             }
-            
+
         }
     }
 };

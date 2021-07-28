@@ -73,7 +73,7 @@ module.exports = {
 
         } else {
 
-        
+
            return message.channel.send("Please supply some arguments")
 
         }

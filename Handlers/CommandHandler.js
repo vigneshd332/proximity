@@ -31,7 +31,7 @@ exports.run = async (client) => {
         ai: "AI"
     }
 
-    //Iterates through 
+    //Iterates through
     for (var command in command_categories) {
         var value = command_categories[command];
         load_command_from_directory(value)

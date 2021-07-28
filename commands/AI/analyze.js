@@ -17,7 +17,7 @@ module.exports = {
         const image = isImage(msg);
         image.then(
             (value) => {
-            //checks the type of the promis value. If it is a stirng then run the first block. 
+            //checks the type of the promis value. If it is a stirng then run the first block.
             if(typeof(value) == "string"){
                 console.log("it is a string")
                 //msg.reply("it is not an image");
@@ -30,44 +30,44 @@ module.exports = {
                console.log(value);
         });
 
-    
+
    function isImage(msg) {
         try {
             //if msg doesnt have a url then this object will not exist and therefore return an error
             const image = msg.attachments.array()[0].url; //json object
             console.log("image url is " + image);
-            
-            //parameters for the general classification 
+
+            //parameters for the general classification
             const params_gen = {
                 url: msg.attachments.array()[0].url,
                 classifier_ids: "default",
             };
-           
+
             //paramters for the food classification
            const params_food = {
                 url: msg.attachments.array()[0].url,
                classifier_ids: "food"
-           } 
+           }
 
            //first promise that does the first classification
            let prom1 = new Promise(
                (resolve, reject) => {
                 //classify object contains image recognition object with general classification
                 let classify_object = null;
-                ir.classify(params_gen , (err, res) => {   
+                ir.classify(params_gen , (err, res) => {
                     if(err){
                         console.log(err);
                         reject(err);
                     }
                     else{
-                        classify_object = res; 
+                        classify_object = res;
                         resolve(classify_object); //first promise resolves a raw classify object
                     }
                 });
                }
            );
 
-       
+
            //Function used to check if the image contains food. Takes raw classify object as a parameter
            function check_image(image_object){
                 for(item of image_object.images[0].classifiers[0].classes){
@@ -81,13 +81,13 @@ module.exports = {
            }
 
                 let promise = prom1.then(function(result){
-                //check if result contains food or person    
+                //check if result contains food or person
                 let bool = check_image(result);
 
                 //if it is a food image than bool will be false and it will return a new promise
                 if(bool == true){
                     return new Promise((resolve, reject) => {
-                        ir.classify(params_food, 
+                        ir.classify(params_food,
                             (err ,res) => {
                                 if(err){
                                     reject(err);
@@ -113,7 +113,7 @@ module.exports = {
             console.log("Type Error caught")
             return (new Promise(
                 (resolve, reject) => {
-                   resolve(msg.content); 
+                   resolve(msg.content);
                 }))
         }
     }

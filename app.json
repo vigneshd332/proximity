@@ -13,6 +13,6 @@
       "description": "Your bot's bot token.",
       "required": true
     },
-    
+
   }
 }

@@ -62,5 +62,5 @@ module.exports = async (client, message, member) => {
     console.log(`Role to be given: ${role}`);
 
     member.roles.add(role).catch(console.error);
-    
+
 }

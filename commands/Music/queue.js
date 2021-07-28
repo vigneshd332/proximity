@@ -21,7 +21,7 @@ module.exports = {
                 songsLeft = queueSize - 1
                 numberUpcoming = queueSize
             }
-            
+
             console.log(queue.songs)
 
             data = new MessageEmbed({type: "rich"})
