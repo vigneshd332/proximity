@@ -14,7 +14,7 @@ module.exports = async (client, message) => {
         let conf = message.content.split(" ");
         conf.shift();
         conf = conf.join(" ");
-        
+
         embed = new MessageEmbed();
         embed.setColor(16712480);
         embed.setTitle(conf);

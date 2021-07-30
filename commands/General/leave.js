@@ -5,7 +5,7 @@ module.exports = {
     description: 'Leaves the current voice channel',
     execute(message, args) {
         if (message.member.voice.channel) {
-            
+
 
             const serverQueue = message.client.queue.get(message.guild.id);
 

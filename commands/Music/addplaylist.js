@@ -61,7 +61,7 @@ module.exports = {
                 fs.writeFile('Commands/Music/playlists.json', json, 'utf8', function callback(err) {
 
                     if(err) console.log(err)
-                }); // write it back 
+                }); // write it back
             }
         });
 

@@ -36,7 +36,7 @@ module.exports = {
 
         async function playlist_scan(id) {
 
-            //Gets playlist information based off the URL 
+            //Gets playlist information based off the URL
             youtube.getPlaylist(id)
                 .then(playlist => {
                     playlist.getVideos()
@@ -107,7 +107,7 @@ module.exports = {
                     .on('finish', () => {
                         queue.songs.shift();
                         play(queue.songs[0]);
-                        
+
                     })
 
 
@@ -143,7 +143,7 @@ module.exports = {
                         console.log(err)
                     }
                 })
-                    
+
                 //Sets logarithmic volume
                 dispatcher.setVolumeLogarithmic(queue.volume / 5);
                 message.channel.send(`🎶 Start playing: **${song.title}** by **${song.channel}**`)
@@ -157,7 +157,7 @@ module.exports = {
                 const connection = await channel.join();
                 queueConstruct.connection = connection;
                 play(queueConstruct.songs[0]);
-            
+
             } catch (error) {
                 console.error(`I could not join the voice channel: ${error}`);
                 message.client.queue.delete(message.guild.id);
@@ -166,7 +166,7 @@ module.exports = {
             }
 
 
-            
+
 
         };
 
@@ -226,7 +226,7 @@ module.exports = {
         }
 
         if (playlistCheck.test(req_song)) {
-                       
+
             playlist_scan(req_song)
 
         } else {
