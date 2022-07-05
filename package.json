@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/vigneshd332/proximity#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
+    "@discordjs/opus": "^0.8.0",
     "canvas": "^2.6.1",
     "cheerio": "^1.0.0-rc.3",
     "discord": "^0.8.2",
