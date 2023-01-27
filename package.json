@@ -63,7 +63,7 @@
     "sqlite3": "^4.2.0",
     "superagent": "^5.2.2",
     "watson-developer-cloud": "^3.8.0",
-    "youtube-search": "^1.1.4",
+    "youtube-search": "^1.1.6",
     "ytdl-core-discord": "^1.2.0"
   }
 }
