@@ -54,7 +54,7 @@
     "heroku-logger": "^0.3.3",
     "js": "^0.1.0",
     "lodash": "^4.17.21",
-    "node-fetch": "^3.1.1",
+    "node-fetch": "^3.2.10",
     "node-opus": "^0.3.3",
     "node-pre-gyp": "^0.14.0",
     "puppeteer": "^3.3.0",
