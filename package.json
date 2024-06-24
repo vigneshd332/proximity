@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/vigneshd332/proximity#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "canvas": "^2.6.1",
+    "@discordjs/opus": "^0.8.0",
+    "canvas": "^2.11.2",
     "cheerio": "^1.0.0-rc.3",
     "discord": "^0.8.2",
     "discord-player": "^1.4.1",
@@ -54,16 +54,16 @@
     "heroku-logger": "^0.3.3",
     "js": "^0.1.0",
     "lodash": "^4.17.21",
-    "node-fetch": "^3.1.1",
+    "node-fetch": "^3.2.10",
     "node-opus": "^0.3.3",
     "node-pre-gyp": "^0.14.0",
     "puppeteer": "^3.3.0",
     "request": "^2.88.0",
     "sequelize": "^5.21.11",
-    "sqlite3": "^4.2.0",
+    "sqlite3": "^5.1.7",
     "superagent": "^5.2.2",
     "watson-developer-cloud": "^3.8.0",
-    "youtube-search": "^1.1.4",
+    "youtube-search": "^1.1.6",
     "ytdl-core-discord": "^1.2.0"
   }
 }
